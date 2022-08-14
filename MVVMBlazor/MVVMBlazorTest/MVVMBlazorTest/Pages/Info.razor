@@ -1,0 +1,45 @@
+﻿@page "/info"
+@using MVVMBlazorTest.ViewModels
+
+@inject IInfoViewModel ViewModel
+
+<h3>Info</h3>
+
+<div>
+    
+<style>
+    .item {
+        border-style: solid;
+    }
+</style>
+
+<EditForm Model="@ViewModel.Person" OnValidSubmit="@SavePerson">
+    <div class="col-4">
+        <div>
+            <label for="name">Name</label>
+            <InputTextArea class="form-control" id="notes" @bind-Value=ViewModel.Person.Name/>
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <InputTextArea class="form-control" id="notes" @bind-Value=ViewModel.Person.Description/>
+        </div>
+        <button type="submit" class="btn btn-primary" disabled="@ViewModel.IsBusy">Save</button>
+    </div>
+</EditForm>
+
+    <br />
+    @foreach (var item in ViewModel.People)
+    {
+        <div class="item">
+            <p>@item.Name</p>
+            <p>@item.Description</p>
+        </div>
+    }
+</div>
+
+@code {
+    void SavePerson()
+    {
+        ViewModel.OnAddPerson(ViewModel.Person);
+    }
+}

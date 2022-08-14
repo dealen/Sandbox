@@ -1,0 +1,29 @@
+﻿@page "/info"
+@using BlazorReactive.ViewModels
+@inject IInfoViewModel ViewModel
+
+<h3>InfoPage</h3>
+
+@ViewModel.Message
+
+<EditForm Model="@ViewModel.Person" OnValidSubmit="@SubmitAddPerson">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText DisplayName="FirstName" @bind-Value="ViewModel.Person.FirstName" />
+    <InputText DisplayName="LastName" @bind-Value="ViewModel.Person.LastName" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@if (ViewModel.People == null)
+{
+    <p>No people here!</p>
+}
+else if (ViewModel.People.Any())
+{
+    foreach (var item in ViewModel.People)
+    {
+        <p>@item.FirstName @item.LastName</p>
+    }
+}
