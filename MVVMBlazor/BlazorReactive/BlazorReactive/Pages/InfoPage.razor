@@ -1,6 +1,9 @@
 ﻿@page "/info"
+
 @using BlazorReactive.ViewModels
-@inject IInfoViewModel ViewModel
+@using BlazorReactive.ViewModels.Base
+
+@inherits BaseComponent<InfoViewModel>
 
 <h3>InfoPage</h3>
 

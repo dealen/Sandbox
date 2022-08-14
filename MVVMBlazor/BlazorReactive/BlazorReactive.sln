@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorReactive", "BlazorReactive\BlazorReactive.csproj", "{12D79A27-20FF-45F0-B292-D488A22E6DC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTest", "BlazorTest\BlazorTest.csproj", "{24E91461-DD8A-433C-98E2-B64E9480C651}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTest", "BlazorTest\BlazorTest.csproj", "{24E91461-DD8A-433C-98E2-B64E9480C651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

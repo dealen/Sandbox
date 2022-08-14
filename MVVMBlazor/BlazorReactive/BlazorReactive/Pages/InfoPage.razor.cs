@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorReactive.ViewModels;
+using BlazorReactive.ViewModels.Base;
 
 namespace BlazorReactive.Pages
 {
-    public partial class InfoPage : ComponentBase
+    public partial class InfoPage : BaseComponent<InfoViewModel>
     {
         public InfoPage()
         {
