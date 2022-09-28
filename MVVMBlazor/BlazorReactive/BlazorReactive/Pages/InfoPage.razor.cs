@@ -1,4 +1,5 @@
-﻿using BlazorReactive.ViewModels;
+﻿using BlazorReactive.Utilities;
+using BlazorReactive.ViewModels;
 using BlazorReactive.ViewModels.Base;
 
 namespace BlazorReactive.Pages
@@ -10,11 +11,18 @@ namespace BlazorReactive.Pages
 
         }
 
+        protected override async Task OnInitializedAsync()
+        {
+            //ViewModel = ViewModelManager.Create<IInfoViewModel>() as InfoViewModel;
+
+            await base.OnInitializedAsync();
+        }
+
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             { 
-                await ViewModel.Initialize();
+                //await ViewModel.Initialize();
             }
             await base.OnAfterRenderAsync(firstRender);
         }

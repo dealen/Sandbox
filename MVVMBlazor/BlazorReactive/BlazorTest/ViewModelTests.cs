@@ -23,7 +23,7 @@ namespace BlazorTest
         [Test]
         public async Task CanInitializeViewModel()
         {
-            await _infoViewModel.Initialize();
+            await _infoViewModel.InitViewModel();
 
             _infoViewModel.People.Should().NotBeNull();
             _infoViewModel.People.Count.Should().BeGreaterThanOrEqualTo(0);
@@ -32,7 +32,7 @@ namespace BlazorTest
         [Test]
         public async Task CanAddPeopleToPersonList()
         {
-            await _infoViewModel.Initialize();
+            await _infoViewModel.InitViewModel();
 
             var person = new BlazorReactive.Models.Person { FirstName = "Kuba", LastName = "M", Id = 123213 };
             await _infoViewModel.AddPerson(person);

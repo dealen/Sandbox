@@ -1,6 +1,9 @@
-﻿namespace BlazorReactive.ViewModels
+﻿using BlazorReactive.ViewModels.Base;
+using System.ComponentModel;
+
+namespace BlazorReactive.ViewModels
 {
-    public interface ILoginViewModel
+    public interface ILoginViewModel : INotifyPropertyChanged, IViewModel
     {
     }
 }

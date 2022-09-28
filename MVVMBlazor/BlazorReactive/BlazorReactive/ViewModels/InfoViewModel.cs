@@ -1,4 +1,5 @@
 ﻿using BlazorReactive.Models;
+using BlazorReactive.ViewModels.Base;
 using ReactiveUI;
 using System.Collections.ObjectModel;
 using System.Reactive.Linq;
@@ -46,7 +47,7 @@ namespace BlazorReactive.ViewModels
                 });
         }
 
-        public async Task Initialize()
+        public async Task InitViewModel()
         {
             _peopleList = new List<Person>();
             _people = new ObservableCollection<Person>(_peopleList);
@@ -86,6 +87,7 @@ namespace BlazorReactive.ViewModels
             _peopleList.Add(perosonCopy);
             People = new ObservableCollection<Person>(_peopleList);
             person = new Person();
+
             await Task.CompletedTask;
         }
     }
