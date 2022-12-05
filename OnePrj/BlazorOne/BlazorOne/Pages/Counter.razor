@@ -1,0 +1,31 @@
+﻿@page "/counter"
+@using BlazorOne.ViewModels;
+@using ReactiveUI
+@using ReactiveUI.Blazor;
+
+@inherits BasePage<ICounterViewModel>
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @ViewModel.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="(() => ViewModel.IncrementCounter.Execute(null))">Click me</button>
+
+<EditForm EditContext="@ViewModel.Context" OnValidSubmit="@(() => ViewModel.SubmitForm.Execute(ViewModel.Model))" >
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="firstname" @bind-Value="ViewModel.Model.FirstName" />
+    <InputText id="lastname" @bind-Value="ViewModel.Model.LastName" />>
+    <InputNumber id="age" @bind-Value="ViewModel.Model.Age" />
+
+    <button type="submit">Submit</button>
+
+</EditForm>
+
+<p>
+
+</p>
