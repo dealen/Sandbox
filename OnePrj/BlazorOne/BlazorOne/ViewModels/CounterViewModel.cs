@@ -16,6 +16,7 @@ namespace BlazorOne.ViewModels
         }
 
         private int _currentCount;
+        private string _formResult;
 
         public int CurrentCount
         {
@@ -26,7 +27,12 @@ namespace BlazorOne.ViewModels
         public FormExampleModel Model { get; set; }
         public ICommand IncrementCounter { get; }
         public ICommand SubmitForm { get; }
-        public string FormResults { get; set; }
+        public string FormResults
+        {
+            get { return _formResult; }
+            set { this.RaiseAndSetIfChanged(ref _formResult, value); }
+        }
+        public string TestText { get; set; }
         public EditContext Context { get; set; }
 
         private void Increment()
@@ -41,6 +47,7 @@ namespace BlazorOne.ViewModels
                 !string.IsNullOrWhiteSpace(model.LastName))
             {
                 FormResults = $"{model.FirstName} {model.LastName} {model.Age}";
+                TestText = $"{model.FirstName} {model.LastName} {model.Age}";
             }
         }
     }

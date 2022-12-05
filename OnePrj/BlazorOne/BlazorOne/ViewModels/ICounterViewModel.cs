@@ -15,6 +15,8 @@ namespace BlazorOne.ViewModels
 
         public string FormResults { get; set; }
 
+        string TestText { get; set; }
+
         EditContext Context { get; set; }
 
         FormExampleModel Model { get; set; }
